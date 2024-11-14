@@ -43,6 +43,17 @@ export function safeString(arg: unknown): string {
 }
 
 /**
+ * Calls `safeString` and returns the response, unless it is an empty string, in which case it returns null.
+ *
+ * @param arg
+ * @returns
+ */
+export function safeStringIfPresent(arg: unknown): string | null {
+  const result = safeString(arg);
+  return result === "" ? null : result;
+}
+
+/**
  * Wraps the given argument in an array, unless it is already an array. If it is a Set it converts it into an array. Then calls safeString on each element. It removes nulls and undefined before returning the result.
  * @param arg
  * @returns
