@@ -1,6 +1,6 @@
 {
   "name": "@plandek-utils/safe-parsing",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "exports": "./src/mod.ts",
   "tasks": {
     "release": "npx light-release && deno fmt",
@@ -23,13 +23,25 @@
   "nodeModulesDir": "auto",
   "fmt": {
     "lineWidth": 120,
-    "include": ["src/", ".release-notes/"]
+    "include": [
+      "src/",
+      ".release-notes/"
+    ]
   },
   "lint": {
-    "include": ["src/", ".release-notes/"]
+    "include": [
+      "src/",
+      ".release-notes/"
+    ]
   },
   "publish": {
-    "include": ["LICENSE", "README.md", "src/**/*.ts"],
-    "exclude": ["src/__tests__"]
+    "include": [
+      "LICENSE",
+      "README.md",
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "src/__tests__"
+    ]
   }
 }
