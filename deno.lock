@@ -12,7 +12,7 @@
     "jsr:@std/path@^1.0.8": "1.0.8",
     "jsr:@std/testing@1.0.5": "1.0.5",
     "npm:@plandek-utils/safe-compact@2.0.1": "2.0.1",
-    "npm:@plandek-utils/ts-parse-dayjs@5.2.1": "5.2.1",
+    "npm:@plandek-utils/ts-parse-dayjs@6.0.0": "6.0.0_zod@3.23.8",
     "npm:@types/node@*": "22.5.4"
   },
   "jsr": {
@@ -63,10 +63,11 @@
     "@plandek-utils/safe-compact@2.0.1": {
       "integrity": "sha512-hYAl4AaETrAJMthIw3JvOuWMaL4xNIw8mxi/Dqm987wU6IF+skzpxwLy5W6e2em1E3AVAC+OriKvSYLk342Anw=="
     },
-    "@plandek-utils/ts-parse-dayjs@5.2.1": {
-      "integrity": "sha512-aSTtZ+y46/zRbt6YraAJ6zdk8EjlajeVf/1ILrSbSbEpwW1NzQneMUTFV8epsK14cKyblPqcVTtOpeTGmF/zqQ==",
+    "@plandek-utils/ts-parse-dayjs@6.0.0_zod@3.23.8": {
+      "integrity": "sha512-6M5eIUDUjXNutlDKa/2/rnCNXuEZGkmSEYjZkE/c5tOwuyfmPeLxdXt8wtPuxZoDheXgtWHVGE4L10YU2AX5NQ==",
       "dependencies": [
-        "dayjs"
+        "dayjs",
+        "zod"
       ]
     },
     "@types/node@22.5.4": {
@@ -80,6 +81,9 @@
     },
     "undici-types@6.19.8": {
       "integrity": "sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw=="
+    },
+    "zod@3.23.8": {
+      "integrity": "sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g=="
     }
   },
   "workspace": {
@@ -88,7 +92,7 @@
       "jsr:@std/expect@1.0.8",
       "jsr:@std/testing@1.0.5",
       "npm:@plandek-utils/safe-compact@2.0.1",
-      "npm:@plandek-utils/ts-parse-dayjs@5.2.1"
+      "npm:@plandek-utils/ts-parse-dayjs@6.0.0"
     ]
   }
 }
