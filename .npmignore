@@ -1,0 +1,30 @@
+# Source files (since we publish dist)
+src/
+
+# Tests
+**/*.spec.ts
+**/*.test.ts
+**/__tests__/
+coverage/
+.nyc_output/
+
+# Config files
+.github/
+.vscode/
+.idea/
+*.config.ts
+.editorconfig
+.gitignore
+.npmignore
+biome.json
+tsconfig.json
+
+# Documentation
+docs/
+.release-notes/
+
+# Development files
+node_modules/
+*.log
+.DS_Store
+Thumbs.db

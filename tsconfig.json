@@ -1,0 +1,15 @@
+{
+	"include": ["src"],
+	"exclude": ["**/*.test.ts", "**/*.spec.ts"],
+	"compilerOptions": {
+		"module": "esnext",
+		"target": "esnext",
+		"declaration": true,
+		"strict": true,
+		"moduleResolution": "node",
+		"outDir": "dist",
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true
+	}
+}

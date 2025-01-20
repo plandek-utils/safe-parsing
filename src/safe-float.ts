@@ -11,7 +11,7 @@ import { types } from "node:util";
  * @returns
  */
 export function safeFloat(arg: unknown): number {
-  return safeFloatWithDefault(arg, 0);
+	return safeFloatWithDefault(arg, 0);
 }
 
 /**
@@ -26,32 +26,34 @@ export function safeFloat(arg: unknown): number {
  * @returns
  */
 export function safeFloatWithDefault<T extends number | null>(
-  arg: unknown,
-  defaultValue: T,
+	arg: unknown,
+	defaultValue: T,
 ): number | T {
-  if (typeof arg === "number" && Number.isFinite(arg)) {
-    return arg;
-  }
+	if (typeof arg === "number" && Number.isFinite(arg)) {
+		return arg;
+	}
 
-  if (Array.isArray(arg)) {
-    return safeFloatWithDefault(arg[0], defaultValue);
-  }
+	if (Array.isArray(arg)) {
+		return safeFloatWithDefault(arg[0], defaultValue);
+	}
 
-  if (types.isSet(arg)) {
-    return safeFloatWithDefault(Array.from(arg)[0], defaultValue);
-  }
+	if (types.isSet(arg)) {
+		return safeFloatWithDefault(Array.from(arg)[0], defaultValue);
+	}
 
-  if (typeof arg === "bigint") {
-    return arg.valueOf() > Number.MAX_VALUE ? Number.MAX_VALUE : Number(arg.valueOf());
-  }
+	if (typeof arg === "bigint") {
+		return arg.valueOf() > Number.MAX_VALUE
+			? Number.MAX_VALUE
+			: Number(arg.valueOf());
+	}
 
-  if (typeof arg === "string") {
-    // try to parse it
-    const parsed = parseFloat(arg);
-    return Number.isFinite(parsed) ? parsed : defaultValue;
-  }
+	if (typeof arg === "string") {
+		// try to parse it
+		const parsed = parseFloat(arg);
+		return Number.isFinite(parsed) ? parsed : defaultValue;
+	}
 
-  return defaultValue;
+	return defaultValue;
 }
 
 /**
@@ -59,7 +61,7 @@ export function safeFloatWithDefault<T extends number | null>(
  * If it is not an array, it wraps it in an array and calls safeFloat on the first element
  */
 export function safeFloats(arg: unknown): number[] {
-  return safeFloatsWithDefault(arg, 0);
+	return safeFloatsWithDefault(arg, 0);
 }
 
 /**
@@ -67,9 +69,9 @@ export function safeFloats(arg: unknown): number[] {
  * If it is not an array, it wraps it in an array and calls safeFloatWithDefault on the first element
  */
 export function safeFloatsWithDefault<T extends number | null>(
-  arg: unknown,
-  defaultValue: T,
+	arg: unknown,
+	defaultValue: T,
 ): Array<number | T> {
-  const list = Array.isArray(arg) ? arg : types.isSet(arg) ? [...arg] : [arg];
-  return list.map((x) => safeFloatWithDefault(x, defaultValue));
+	const list = Array.isArray(arg) ? arg : types.isSet(arg) ? [...arg] : [arg];
+	return list.map((x) => safeFloatWithDefault(x, defaultValue));
 }

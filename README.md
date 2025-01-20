@@ -1,8 +1,7 @@
 # @plandek-utils/safe-parsing
 
-[![JSR Scope](https://jsr.io/badges/@plandek-utils)](https://jsr.io/@plandek-utils)
-[![JSR](https://jsr.io/badges/@plandek-utils/safe-parsing)](https://jsr.io/@plandek-utils/safe-parsing)
-[![JSR Score](https://jsr.io/badges/@plandek-utils/safe-parsing/score)](https://jsr.io/@plandek-utils/safe-parsing)
+[![npm version](https://badge.fury.io/js/%40plandek-utils%2Fsafe-parsing.svg)](https://www.npmjs.com/package/@plandek-utils/safe-parsing)
+[![CI/CD](https://github.com/plandek-utils/safe-parsing/actions/workflows/main.yml/badge.svg)](https://github.com/plandek-utils/safe-parsing/actions/workflows/main.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f5f977daeb40e6109ae4/maintainability)](https://codeclimate.com/github/plandek-utils/safe-parsing/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/f5f977daeb40e6109ae4/test_coverage)](https://codeclimate.com/github/plandek-utils/safe-parsing/test_coverage)
 
@@ -116,13 +115,19 @@ safeStrings([null, "whatever", NaN, 12]); // ["whatever", "12"]
 safeStrings(123); // ["123"]
 ```
 
+## Installation
+
+```bash
+npm install @plandek-utils/safe-parsing
+```
+
 ## Development
 
-This package is developed with deno 2. The production code is in `src/mod.ts` and its test in
-`src/__tests__/mod.spec.ts`
+This package is developed with Node.js and TypeScript. The production code is in `src/` and tests are in `src/__tests__/`.
 
-- `deno fmt src`: format files
-- `deno lint src`: lint files
-- `deno dev`: run tests on each change in mod.ts
-- `deno run test && deno run lcov && deno run html`: run the tests with coverage, then convert to lcov and prepare in
-  `html_cov` an HTML export of the coverage info.
+- `npm run build`: build the package
+- `npm run test`: run tests
+- `npm run test:watch`: run tests in watch mode
+- `npm run test:coverage`: run tests with coverage
+- `npm run lint`: lint files
+- `npm run format`: format files
