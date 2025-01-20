@@ -20,7 +20,10 @@ declare function safeFloat(arg: unknown): number;
  * @param defaultValue
  * @returns
  */
-declare function safeFloatWithDefault<T extends number | null>(arg: unknown, defaultValue: T): number | T;
+declare function safeFloatWithDefault<T extends number | null>(
+	arg: unknown,
+	defaultValue: T,
+): number | T;
 /**
  * Calls safeFloat on each element of the given list (array or set)
  * If it is not an array, it wraps it in an array and calls safeFloat on the first element
@@ -30,7 +33,10 @@ declare function safeFloats(arg: unknown): number[];
  * Calls safeFloatWithDefault on each element of the given list (array or set)
  * If it is not an array, it wraps it in an array and calls safeFloatWithDefault on the first element
  */
-declare function safeFloatsWithDefault<T extends number | null>(arg: unknown, defaultValue: T): Array<number | T>;
+declare function safeFloatsWithDefault<T extends number | null>(
+	arg: unknown,
+	defaultValue: T,
+): Array<number | T>;
 
 /**
  * If the argument is:
@@ -59,4 +65,12 @@ declare function safeStringIfPresent(arg: unknown): string | null;
  */
 declare function safeStrings(arg: unknown): string[];
 
-export { safeFloat, safeFloatWithDefault, safeFloats, safeFloatsWithDefault, safeString, safeStringIfPresent, safeStrings };
+export {
+	safeFloat,
+	safeFloatWithDefault,
+	safeFloats,
+	safeFloatsWithDefault,
+	safeString,
+	safeStringIfPresent,
+	safeStrings,
+};
