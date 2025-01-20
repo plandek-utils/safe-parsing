@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest";
-import { safeFloat, safeFloats, safeFloatWithDefault } from "../safe-float";
+import { describe, expect, it } from "vitest";
+import { safeFloat, safeFloatWithDefault, safeFloats } from "../safe-float";
 
 describe("safeFloat()", () => {
 	it("with null: returns 0", () => {
@@ -11,11 +11,11 @@ describe("safeFloat()", () => {
 	});
 
 	it("with NaN: returns 0", () => {
-		expect(safeFloat(NaN)).toEqual(0);
+		expect(safeFloat(Number.NaN)).toEqual(0);
 	});
 
 	it("with Infinity: returns 0", () => {
-		expect(safeFloat(Infinity)).toEqual(0);
+		expect(safeFloat(Number.POSITIVE_INFINITY)).toEqual(0);
 	});
 
 	it("with any string: returns 0", () => {
@@ -88,14 +88,14 @@ describe("safeFloats()", () => {
 describe("safeFloatWithDefault", () => {
 	it("should return the argument when it is a finite number", () => {
 		expect(safeFloatWithDefault(42, null)).toBe(42);
-		expect(safeFloatWithDefault(-Infinity, null)).toBe(null);
-		expect(safeFloatWithDefault(Infinity, null)).toBe(null);
+		expect(safeFloatWithDefault(Number.NEGATIVE_INFINITY, null)).toBe(null);
+		expect(safeFloatWithDefault(Number.POSITIVE_INFINITY, null)).toBe(null);
 	});
 
 	it("should return the argument when it is an array with a finite number", () => {
 		expect(safeFloatWithDefault([42], null)).toBe(42);
-		expect(safeFloatWithDefault([-Infinity], null)).toBe(null);
-		expect(safeFloatWithDefault([Infinity], null)).toBe(null);
+		expect(safeFloatWithDefault([Number.NEGATIVE_INFINITY], null)).toBe(null);
+		expect(safeFloatWithDefault([Number.POSITIVE_INFINITY], null)).toBe(null);
 	});
 
 	it("should return the default value when the argument is not a string", () => {

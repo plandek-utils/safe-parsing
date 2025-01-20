@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest";
 import { parseDayjs } from "@plandek-utils/ts-parse-dayjs";
+import { describe, expect, it } from "vitest";
 import {
 	safeString,
 	safeStringIfPresent,
@@ -53,13 +53,13 @@ describe("safeString() and safeStringIfPresent()", () => {
 	});
 
 	it("NaN: returns empty string / null", () => {
-		expect(safeString(NaN)).toEqual("");
-		expect(safeStringIfPresent(NaN)).toBeNull();
+		expect(safeString(Number.NaN)).toEqual("");
+		expect(safeStringIfPresent(Number.NaN)).toBeNull();
 	});
 
 	it("Infinity: returns empty string / null", () => {
-		expect(safeString(Infinity)).toEqual("");
-		expect(safeStringIfPresent(Infinity)).toBeNull();
+		expect(safeString(Number.POSITIVE_INFINITY)).toEqual("");
+		expect(safeStringIfPresent(Number.POSITIVE_INFINITY)).toBeNull();
 	});
 
 	it("with a date or dayjs: returns iso date format", () => {
@@ -81,7 +81,7 @@ describe("safeString() and safeStringIfPresent()", () => {
 
 describe("safeStrings()", () => {
 	it("with an array -> maps safeString() to each element, and removes empty strings", () => {
-		expect(safeStrings([null, "whatever", NaN, 12])).toEqual([
+		expect(safeStrings([null, "whatever", Number.NaN, 12])).toEqual([
 			"whatever",
 			"12",
 		]);

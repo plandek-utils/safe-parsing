@@ -49,7 +49,7 @@ export function safeFloatWithDefault<T extends number | null>(
 
 	if (typeof arg === "string") {
 		// try to parse it
-		const parsed = parseFloat(arg);
+		const parsed = Number.parseFloat(arg);
 		return Number.isFinite(parsed) ? parsed : defaultValue;
 	}
 

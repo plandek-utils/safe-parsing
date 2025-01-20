@@ -1,6 +1,6 @@
+import { types } from "node:util";
 import { safeCompact } from "@plandek-utils/safe-compact";
 import { isDayjs } from "@plandek-utils/ts-parse-dayjs";
-import { types } from "node:util";
 
 /**
  * If the argument is:
