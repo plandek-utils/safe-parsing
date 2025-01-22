@@ -1,6 +1,6 @@
 {
   "name": "@plandek-utils/safe-parsing",
-  "version": "1.0.0",
+  "version": "0.3.0",
   "description": "Safe parsing utilities for strings and floats",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
