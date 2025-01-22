@@ -1,32 +1,19 @@
 {
-	"name": "Deno",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
-
-	// Configure tool-specific properties.
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"justjavac.vscode-deno-extensionpack",
-				"mikestead.dotenv",
-				"streetsidesoftware.code-spell-checker",
-				"ms-azuretools.vscode-docker",
-				"EditorConfig.EditorConfig",
-				"GitHub.copilot",
-				"phind.phind"
-			]
-		}
-	}
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+  "name": "Node.js & TypeScript",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "biomejs.biome",
+        "idered.npm",
+        "talljack.vscode-package-version",
+        "vitest.explorer",
+        "streetsidesoftware.code-spell-checker",
+        "EditorConfig.EditorConfig",
+        "github.vscode-github-actions",
+        "saoudrizwan.claude-dev",
+        "phind.phind"
+      ]
+    }
+  }
 }

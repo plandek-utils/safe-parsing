@@ -2,15 +2,15 @@
   "name": "@plandek-utils/safe-parsing",
   "version": "1.0.0",
   "description": "Safe parsing utilities for strings and floats",
-  "type": "module",
-  "main": "dist/mod.js",
-  "types": "dist/mod.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "src"
   ],
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "scripts": {
     "build": "npm run build:tsup && npm run build:dts",
@@ -54,9 +54,9 @@
     "typescript": "^5.7.3",
     "vitest": "^3.0.2"
   },
-  "dependencies": {
-    "@plandek-utils/safe-compact": "^2.0.1",
-    "@plandek-utils/ts-parse-dayjs": "^6.3.0",
+  "peerDependencies": {
+    "@plandek-utils/safe-compact": "^2.0.2",
+    "@plandek-utils/ts-parse-dayjs": "^6.3.2",
     "dayjs": "^1.11.13"
   }
 }

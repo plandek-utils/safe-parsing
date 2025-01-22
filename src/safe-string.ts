@@ -15,35 +15,35 @@ import { isDayjs } from "@plandek-utils/ts-parse-dayjs";
  * @returns
  */
 export function safeString(arg: unknown): string {
-	if (typeof arg === "string") {
-		return arg;
-	}
+  if (typeof arg === "string") {
+    return arg;
+  }
 
-	if (typeof arg === "number") {
-		return Number.isFinite(arg) ? arg.toString() : "";
-	}
+  if (typeof arg === "number") {
+    return Number.isFinite(arg) ? arg.toString() : "";
+  }
 
-	if (typeof arg === "bigint") {
-		return arg.toString();
-	}
+  if (typeof arg === "bigint") {
+    return arg.toString();
+  }
 
-	if (Array.isArray(arg)) {
-		return safeString(arg[0]);
-	}
+  if (Array.isArray(arg)) {
+    return safeString(arg[0]);
+  }
 
-	if (types.isSet(arg)) {
-		return safeString(Array.from(arg as Set<unknown>)[0]);
-	}
+  if (types.isSet(arg)) {
+    return safeString(Array.from(arg as Set<unknown>)[0]);
+  }
 
-	if (types.isDate(arg)) {
-		return arg.toISOString();
-	}
+  if (types.isDate(arg)) {
+    return arg.toISOString();
+  }
 
-	if (isDayjs(arg)) {
-		return arg.toISOString();
-	}
+  if (isDayjs(arg)) {
+    return arg.toISOString();
+  }
 
-	return "";
+  return "";
 }
 
 /**
@@ -53,8 +53,8 @@ export function safeString(arg: unknown): string {
  * @returns
  */
 export function safeStringIfPresent(arg: unknown): string | null {
-	const result = safeString(arg);
-	return result === "" ? null : result;
+  const result = safeString(arg);
+  return result === "" ? null : result;
 }
 
 /**
@@ -63,10 +63,6 @@ export function safeStringIfPresent(arg: unknown): string | null {
  * @returns
  */
 export function safeStrings(arg: unknown): string[] {
-	const list = Array.isArray(arg)
-		? arg
-		: types.isSet(arg)
-			? Array.from(arg as Set<unknown>)
-			: [arg];
-	return safeCompact(list.map(safeString));
+  const list = Array.isArray(arg) ? arg : types.isSet(arg) ? Array.from(arg as Set<unknown>) : [arg];
+  return safeCompact(list.map(safeString));
 }
