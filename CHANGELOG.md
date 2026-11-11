@@ -3,6 +3,13 @@
 ### Changes
 - Release notes generated for version [0.3.0](.release-notes/0.3.0/release.md)
 
+## [1.1.0](https://github.com/plandek-utils/safe-parsing/compare/v1.0.3...v1.1.0) (2026-11-11)
+
+
+### Features
+
+* PLAN-17573: accept @plandek-utils/ts-parse-dayjs 7 ([#9](https://github.com/plandek-utils/safe-parsing/issues/9)) ([a2b5640](https://github.com/plandek-utils/safe-parsing/commit/a2b5640f4445d294222adb0b76a4f1599e84c0e3))
+
 ## [1.0.3](https://github.com/plandek-utils/safe-parsing/compare/v1.0.2...v1.0.3) (2026-11-11)
 
 
