@@ -60,7 +60,7 @@
   },
   "peerDependencies": {
     "@plandek-utils/safe-compact": "^2.0.2",
-    "@plandek-utils/ts-parse-dayjs": "^6.4.0",
+    "@plandek-utils/ts-parse-dayjs": "^6.4.0 || ^7.0.0",
     "dayjs": "^1.11.13"
   }
 }
