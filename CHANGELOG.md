@@ -3,6 +3,13 @@
 ### Changes
 - Release notes generated for version [0.3.0](.release-notes/0.3.0/release.md)
 
+## [1.0.3](https://github.com/plandek-utils/safe-parsing/compare/v1.0.2...v1.0.3) (2026-11-11)
+
+
+### Bug Fixes
+
+* PLAN-17573: test release to verify npm trusted publishing ([#10](https://github.com/plandek-utils/safe-parsing/issues/10)) ([1d461a4](https://github.com/plandek-utils/safe-parsing/commit/1d461a45fcef6ef579f894bd703207e0b1dc33c9))
+
 ## [1.0.2](https://github.com/plandek-utils/safe-parsing/compare/v1.0.1...v1.0.2) (2025-01-31)
 
 
